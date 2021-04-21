@@ -1,0 +1,1 @@
+# SysopsSquat-Archit-Kata
