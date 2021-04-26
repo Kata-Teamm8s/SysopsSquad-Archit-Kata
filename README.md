@@ -1,1 +1,1 @@
-# SysopsSquat-Archit-Kata
+# SysopsSquad-Archit-Kata
