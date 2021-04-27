@@ -1,0 +1,39 @@
+Textual high level representation:
+----------------------------------
+            open-sms-link -- > fill survey -- > [survey-db] -- > stream-queue → dwh(for analysis)
+                          |
+                            ---> register/edit-profile/billing-info/contract  -->  [user-db]
+                          |
+user -- > [system] - -> ticket creation - -> [ticket-db]/sql
+     				                          \
+                                    	[queue]
+                                        		\
+                                     	[expert-matcher-service]
+                                        		\
+                  Assignment notification (both user & expert): PUSH-SMS/email(chk preference)
+					                                               \
+									                                        \
+             [billing-worker] -- > recurrent payment -- > [notification-system] --3rd-party-bulk-sms-api
+ 							       |
+expert→[system]------->mark done ----> [ticket-db] + ---->
+
+
+expert  ---> add-knowledge-base→ [knowledge-db]/nosql
+admin→ manage-profiles ---> [user-db]
+
+manager-> [system] → get-ticket-status → [ticket-db]
+                                → get-analytical-report ---> [dwh]
+
+
+
+
+Break-down into different microservices:
+----------------------------------------
+User-profile-management-service
+Ticket-management-service
+Notification-service
+Billing-service
+Survey-service
+Knowledge-base-service
+
+
