@@ -2,7 +2,7 @@
 
 ## Current Implementation
 
-A monolith app, consising of User Interface, Business Logic and Database layers.
+A monolith app, consisting of User Interface, Business Logic and Database layers.
 
 The main modules of the system are customer information, internal user management, login and notification, reporting and ticket related logic (includes ticket workflow logic, survey and knowledge base). 
 
@@ -14,9 +14,9 @@ Company's customers reported issues with the ticket flow (inconsistent data due 
 
 1. The system is fragile. Parallel request execution (e.g. customer or ticket creation, billing trigger and report generation) might lead to errors and timeouts.
 
-2. The system is not elastic. In the case of increased usage, customer relevant data is lost (cusomer profile or ticket handling information).
+2. The system is not elastic. In the case of increased usage, customer relevant data is lost (customer profile or ticket handling information).
 
-3. Overall, the system is not easy to maintain. High coupling leads to increased development costs and the high number of regression bugs.
+3. Overall, the system is not easy to maintain. High coupling leads to increased development costs, and a high number of regression bugs.
 
 ## Redesign Goals
 
@@ -37,4 +37,4 @@ We define the following goals of system redesign:
 
 2. If needed, we can consider a possible downtime to execute data migration, because we do not expect active system usage during night hours, since the system is used only within one country. 
 
-3. In order to minimze the development costs, the legacy code should be reused as much as possible.
+3. In order to minimize the development costs, the legacy code should be reused as much as possible.
