@@ -1,0 +1,44 @@
+@startuml "Sysops-Squad-ERP-Container-Diagram"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 200
+
+LAYOUT_TOP_DOWN()
+'LAYOUT_AS_SKETCH()
+LAYOUT_WITH_LEGEND()
+HIDE_STEREOTYPE()
+
+Person(admin, Administrator, "Maintains the system")
+Person_Ext(customer, Customer, "Uses tech support services")
+Person(expert, Export, "Provides tech support services")
+Person(manager, Manager, "Manages experts and customers")
+
+System_Boundary(c1, "Sysops Squad ERP") {
+    Container(web_app, "Sysops Squad Web App", "React", "Admin, Manager and Customer user interface")
+    Container(mobile_app, "Expert Mobile App", "Java", "Expert user interface")
+    Container(api, "Sysops Squad API App", "PHP", "Provides ERP functionality")
+    ContainerDb(ss_db, "Sysops Squad DB", "MySQL", "Sysops Squad DB")
+}
+
+System_Ext(emailer, "Emailer")
+System_Ext(notifier, "Notifier")
+
+Rel(expert, mobile_app, "Uses", "https")
+Rel(admin, web_app, "Uses", "https")
+Rel(manager, web_app, "Uses", "https")
+Rel(customer, web_app, "Uses", "https")
+
+Rel(web_app, api, "Make API calls to", "json/https")
+Rel(mobile_app, api, "Make API calls to", "json/https")
+Rel(api, ss_db, "Reads from and writes to", "odbc")
+Rel(api, notifier, "Sends notifications via", "https")
+Rel(notifier, expert, "Sends notifications to", "sms")
+Rel(notifier, customer, "Sends notifications to", "sms")
+Rel(api, emailer, "Sends reports, notifications via", "https")
+Rel(emailer, manager, "Sends reports to", "email")
+Rel(emailer, customer, "Sends notifications to", "email")
+
+@enduml
