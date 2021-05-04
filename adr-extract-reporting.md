@@ -1,4 +1,4 @@
-# ADR 1: Extract reporting from the main system (a.k.a the Monolith)
+# ADR 1: Extract Reporting from the Main System (a.k.a the Monolith)
 
 ## Status
 
@@ -20,7 +20,7 @@ made, it takes too long and something else usually breaks.
 To tackle both issues, we decided to first extract self-containing components
 from the main system and enable asynchronous handling of tasks where possible.
 
-As a first step we will start with components which appear to be easy to isolate
+As a first step, we will start with components which appear to be easy to isolate
 and promise potential for significant savings of system resources.
 
 ## Decision
