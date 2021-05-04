@@ -10,25 +10,29 @@ The database has the following table groups: Knowledge Base, General Customer Da
 
 ## Issues
 
-Company's customers reported issues with the ticket flow (inconsistent data due to missing and incorrectly handled tickets). Internal users reported that the system is unstable (freezes and crushes).
+Company's customers reported issues with the ticket flow (inconsistent data due to missing and incorrectly handled tickets). Internal users reported that the system is unstable (freezes and crashes).
 
 1. The system is fragile. Parallel request execution (e.g. customer or ticket creation, billing trigger and report generation) might lead to errors and timeouts.
 
 2. The system is not elastic. In the case of increased usage, customer relevant data is lost (cusomer profile or ticket handling information).
 
-3. Overall, the system is not easy to maintain. High coupling leads to increased development costs and the high number of regression bugs.
+3. Overall, the system is not easy to maintain. High coupled components lead to increased development costs and the high number of regression bugs.
 
 ## Redesign Goals
 
 We define the following goals of system redesign:
 
-1. Since the customer data and the ticket flow are the most valuable business artifacts for SysOps Squad, try to move these features into the center of our new architecture and guarantee high reliability of these components.
+1. Ensure basic best practices are enforced, enable horizontal scaling to save the company.
 
-2. Make the system anti-fragile. Issues in one part of the system should not affect the other parts.
+2. Look for low-hanging fruits, implement quick wins, to save time and enable growth until larger refactorings can happen.
 
-3. Increase system's elasticity. Parts of the system that are expected to experience bursts of requests should be easy to scale up and down on demand.
+3. Since the customer data and the ticket flow are the most valuable business artifacts for SysOps Squad, try to move these features into the center of our new architecture and guarantee high reliability of these components.
 
-4. Decrease code coupling and increase cohesion. Use the current implementation as a reference for feature clustering.
+4. Make the system stable. Issues in one part of the system should not affect the other parts.
+
+5. Increase system's elasticity. Parts of the system that are expected to experience bursts of requests should be easy to scale up and down on demand.
+
+6. Decrease code coupling and increase cohesion. Use the current implementation as a reference for feature clustering.
 
 
 ## Risks
