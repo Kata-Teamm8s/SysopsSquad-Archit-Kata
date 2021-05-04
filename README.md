@@ -13,7 +13,7 @@ To provide sufficient context for our solution, it's important to state our assu
 3. There is a feature-complete API layer which is used by both the Web and Mobile apps. Both Web and Mobile apps are simple representation layers.
 4. There is only one database used by the system which was designed to be scaled vertically. (There may still be replicas in use.)
 5. There are no read- or write-specific databases and/or database connections.
-6. Static data (such as supported products ad name-value pairs) does not live in the database, but in the filesystem.
+6. Static data (such as supported products and name-value pairs) does not live in the database, but in the filesystem.
 7. All internal calls are synchronous and based on method calls.
 8. There is a reasonable, strict CDP pipeline in place along with good software engineering practices in place. (Testing, static code analysis, etc.)
 9. We have a growing, but limited number of software engineers available. (20-30 engineers in 5-8 teams)
