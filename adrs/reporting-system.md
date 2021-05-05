@@ -1,4 +1,4 @@
-# ADR: Extract Reporting from the Main System (a.k.a the Monolith)
+# ADR: Extract the Reporting System
 
 ## Status
 
