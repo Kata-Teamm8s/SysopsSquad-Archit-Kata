@@ -114,10 +114,10 @@ Once these steps are implemented, we have enabled a simple horizontal scaling of
 
 ## 2. Save the company
 
-1. Extract the reporting sub-system. ([ADR](adrs/extract-reporting.md), [component diagram](proposal/reporting-extracted.png))
+1. Extract the reporting sub-system. ([ADR](adrs/reporting-system.md), [component diagram](proposal/reporting-extracted.png))
 2. Extract the surveying sub-system. (ADR, [component diagram](proposal/surveying-extracted.png))
 3. Asynchronous ticket routing. (ADR, [component diagram](proposal/async-ticket-routing.png))
-4. Notification sub-system. ([ADR](adrs/notification-system.md), [component diagram](proposal/async-notification.png))
+4. Extract the notification sub-system. ([ADR](adrs/notification-system.md), [component diagram](proposal/async-notification.png))
 
 At this point all user-reported problems should be managed, but maintainability is expected to remain an issue.
 
@@ -134,7 +134,7 @@ Once the engineering department grows much larger (100+), we expect to see a nat
 2. Sessions in Key-Value Store
 3. API Behind Load Balancers
 4. Read Replicas for Read
-5. [Extract The Reporting](adrs/extract-reporting.md)
-6. [Notification System](adrs/notification-system.md)
-7. Extract The Surveying System
+5. [Extract the Reporting System](adrs/reporting-system.md)
+6. [Extract the Notification System](adrs/notification-system.md)
+7. Extract the Surveying System
 8. Asynchronous ticket routing
