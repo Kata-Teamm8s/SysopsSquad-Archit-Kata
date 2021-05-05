@@ -110,13 +110,13 @@ This phase mostly includes steps which are hard to represent in our C4 diagrams 
 4. Introduce read replicas of the Monolith database. (ADR)
 5. Enable (manual) horizontal scaling of SysopsSquad ERP.
 
-Once these steps are implemented, we have enabled a simple horizontal scaling of the SysopsSquad ERP which could technically. At this point our architecture will look like [this](proposal/solid-foundations.png)
+Once these steps are implemented, we have enabled a simple horizontal scaling of the SysopsSquad ERP which could technically. At this point our architecture will look like [this](proposal/solid-foundations.png), very similar to our [starting point](architecture/api-component-diagram.png).
 
 ## 2. Save the company
 
 1. Extract the reporting sub-system. ([ADR](adrs/reporting-system.md), [component diagram](proposal/reporting-extracted.png))
-2. Extract the surveying sub-system. (ADR, [component diagram](proposal/surveying-extracted.png))
-3. Asynchronous ticket routing. (ADR, [component diagram](proposal/async-ticket-routing.png))
+2. Asynchronous ticket routing. (ADR, [component diagram](proposal/async-ticket-routing.png))
+3. Extract the surveying sub-system. (ADR, [component diagram](proposal/surveying-extracted.png))
 4. Extract the notification sub-system. ([ADR](adrs/notification-system.md), [component diagram](proposal/async-notification.png))
 
 At this point all user-reported problems should be managed, but maintainability is expected to remain an issue.
