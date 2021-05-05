@@ -1,4 +1,4 @@
-# ADR 2: Extract Notification Component
+# ADR: Extract Notification Component
 
 ## Status
 
