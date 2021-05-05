@@ -2,21 +2,21 @@
 
 ## Current Implementation
 
-A monolith app, consising of User Interface, Business Logic and Database layers.
+A monolith app, consisting of User Interface, Business Logic, and Database layers.
 
-The main modules of the system are customer information, internal user management, login and notification, reporting and ticket related logic (includes ticket workflow logic, survey and knowledge base). 
+The main modules of the system are customer information, internal user management, login and notification, reporting, and ticket-related logic (includes ticket workflow logic, survey, and knowledge base). 
 
-The database has the following table groups: Knowledge Base, General Customer Data, Billing Data, Ticket Data, Expert Information and Survey Information. These table clusters are loosely connected between each other. There are no specific reporting tables.
+The database has the following table groups: Knowledge Base, General Customer Data, Billing Data, Ticket Data, Expert Information, and Survey Information. These table clusters are loosely connected to each other. There are no specific reporting tables.
 
 ## Issues
 
-Company's customers reported issues with the ticket flow (inconsistent data due to missing and incorrectly handled tickets). Internal users reported that the system is unstable (freezes and crashes).
+The company's customers reported issues with the ticket flow (inconsistent data due to missing and incorrectly handled tickets). Internal users reported that the system is unstable (freezes and crashes).
 
-1. The system is fragile. Parallel request execution (e.g. customer or ticket creation, billing trigger and report generation) might lead to errors and timeouts.
+1. The system is fragile. Parallel request execution (e.g. customer or ticket creation, billing trigger, and report generation) might lead to errors and timeouts.
 
-2. The system is not elastic. In the case of increased usage, customer relevant data is lost (cusomer profile or ticket handling information).
+2. The system is not elastic. In the case of increased usage, customer-relevant data is lost (cusomer profile or ticket handling information).
 
-3. Overall, the system is not easy to maintain. High coupled components lead to increased development costs and the high number of regression bugs.
+3. Overall, the system is not easy to maintain. Highly coupled components lead to increased development costs and a high number of regression bugs.
 
 ## Redesign Goals
 
@@ -37,8 +37,8 @@ We define the following goals of system redesign:
 
 ## Risks
 
-1. Redesign / refactoring should be conducted without negative impact on customer experience. Client behaviour stays exactly the same as before redesign. 
+1. Redesign / refactoring should be conducted without a negative impact on customer experience. Client behaviour stays exactly the same as before redesign. 
 
 2. If needed, we can consider a possible downtime to execute data migration, because we do not expect active system usage during night hours, since the system is used only within one country. 
 
-3. In order to minimze the development costs, the legacy code should be reused as much as possible.
+3. In order to minimize the development costs, the legacy code should be reused as much as possible.
